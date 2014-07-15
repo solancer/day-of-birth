@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Day Of Birth</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet" media="screen">
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet" media="screen">
+    <link href="{{ url_for('static', filename='css/select2.css') }}" rel="stylesheet"/>
+
+</head>
+<body>
+    {% block input %}
+    {% endblock %}
+
+<script src="http://code.jquery.com/jquery.js"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/select2.min.js') }}"></script>
+    <script>
+     $(document).ready(function() {
+        $("#s1").select2({
+            placeholder: "Select a Year",
+            allowClear: true
+        });
+
+        $("#s2").select2({
+            placeholder: "Select a Month"
+        });
+
+        $("#s3").select2({
+            placeholder: "Select a Day"
+        });
+      });
+    </script>
+ <footer>
+	<div class="container">
+		<p>Hobby project by <a href="http://www.solancer.com/" rel="author">Srinivas Gowda</a></p>
+	</div>
+</footer>
+</body>
+</html>

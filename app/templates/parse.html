@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block input %}
+<div class="container wrap">
+    {% if results %}
+    <div class="restable">
+        <table class="table table-striped">
+            <tr>
+                <td>You were born on a <strong>{{ results.day }}</strong></td>
+            </tr>
+            <tr>
+                <td>Zodiac Sign: <strong>{{ results.zodiac }}</strong></td>
+            </tr>
+            <tr>
+                <td>
+                    {% if results.leap %}
+                        The year you were born was a leap year
+                    {% else %}
+                        The year you were born was not a leap year
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Age: <strong>{{ results.ageYY }}</strong> years <strong>{{ results.ageMM }}</strong> months <strong>{{ results.ageDD }}</strong> days old
+                </td>
+            </tr>
+            <tr>
+                <td>or</td>
+            </tr>
+            <tr>
+                <td><strong>{{ results.ageInDays }}</strong> days old</td>
+            </tr>
+            <tr>
+                <td><strong>{{ results.ageInHours }}</strong> Hours old (approximate)</td>
+            </tr>
+            <tr>
+                <td><strong>{{ results.ageInMins }}</strong> Minutes old (approximate)</td>
+            </tr>
+            <tr>
+                <td><strong>{{ results.ageInSecs }}</strong> Seconds old (approximate)</td>
+            </tr>
+        </table>
+    {% endif %}
+    {% if error %}
+        <p>{{ error }}</p>
+    {% endif %}
+    </div>
+</div>
+{% endblock %}
